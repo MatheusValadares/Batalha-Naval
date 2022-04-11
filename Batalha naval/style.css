@@ -1,0 +1,209 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #dfdfdf;
+    font-family: Righteous, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: blue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}  
+
+.player{
+    background-color: rgb(129, 188, 255);
+    height: 150px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+#game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    margin-top: 30px;
+}
+
+
+#gameBoard{
+    background-color: rgb(129, 188, 255);
+    max-width: 700px;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+}
+
+
+.card{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.5s;
+    
+}
+
+.card_front, .card_back{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(77, 77, 255, 0.45);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card_front{
+    background-color: rgb(129, 188, 255);
+    transform: rotateY(180deg);
+}
+
+.card_back::after{
+    background-color: white;
+    content: "\1F30A";
+    font-size: 35px;
+    border-radius: 10px;
+    cursor:crosshair;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.bomb:after{
+    content: "\1F4A3";
+    font-size: 30px;
+
+}
+
+.boat:after{
+    content: "\26F5";
+    font-size: 30px;
+
+}
+
+
+#gameOver{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-size: 60px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+
+}
+
+
+#restart{
+    color: white;
+    background-color: rgb(12, 2, 146);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+
+
+@keyframes changeColor {
+    0%{background-color:rgb(129, 188, 255) ;}
+    50%{background-color:rgba(9, 25, 245, 0.342) ;}
+}
+
+
+
+.playerColor{
+    animation-name: changeColor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+@media screen and (max-width: 780px) {
+
+    body{
+        display: grid;
+        grid-template: auto auto / auto;
+        grid-row-gap: 10px;
+    }
+
+    #game{
+        order:1 ;
+    }
+
+    .player{
+        order: 2;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #gameBoard{
+        max-width: 450px;
+        max-height: 450px;
+    }
+
+    .card{
+        width: 30px;
+        height: 30px;
+    }
+    
+    #gameOver{
+        font-size: 35px;
+    }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

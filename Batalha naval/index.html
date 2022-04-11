@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Batalha Naval</title>
+</head>
+
+<body>
+
+    <div id="square1" class="player">
+        <div id="player1">JOGADOR 1</div>
+        <div id="score1">NAVIOS AFUNDADOS: 0</div>
+    </div>
+
+    <div id="game">
+
+        <h1>BATALHA NAVAL</h1>
+
+        <div id="gameBoard">
+        </div>
+    </div>
+
+    <div id="square2" class="player">
+        <div id="player2">JOGADOR 2</div>
+        <div id="score2">NAVIOS AFUNDADOS: 0</div>
+    </div>
+
+    <div id="gameOver">
+        <div id="msgGameOver"></div>
+        <button id="restart" onclick="restart()">Jogue Novamente</button>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="interface.js"></script>
+
+</body>
+
+</html>
